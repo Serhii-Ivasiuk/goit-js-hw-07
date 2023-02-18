@@ -30,10 +30,8 @@ function onGalleryItemClick(evt) {
 
 	if (evt.target.nodeName !== 'IMG') return;
 
-	const targetOriginalImageUrl = evt.target.dataset.source;
-
 	const imageInstance = basicLightbox.create(
-		`<img width="1280" height="852" src="${targetOriginalImageUrl}">`,
+		`<img width="1280" height="852" src="${evt.target.dataset.source}">`,
 		{
 			onShow: () => window.addEventListener('keydown', onEscapeKeydown),
 			onClose: () => window.removeEventListener('keydown', onEscapeKeydown),
